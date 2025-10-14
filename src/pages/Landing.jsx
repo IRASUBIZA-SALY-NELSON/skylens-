@@ -292,7 +292,7 @@ export default function Landing() {
               <div>
                 <div className="aspect-[16/10] w-full overflow-hidden rounded-xl shadow-soft ring-1 ring-gray-200 bg-white">
                   <img
-                    src="https://images.pexels.com/photos/3691232/pexels-photo-3691232.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1"
+                    src="https://images.pexels.com/photos/336232/pexels-photo-336232.jpeg"
                     alt="Surveying drone inspecting landscape"
                     className="h-full w-full object-cover"
                     onError={handleImgError}
@@ -341,12 +341,12 @@ export default function Landing() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                {src:'https://images.pexels.com/photos/116145/pexels-photo-116145.jpeg?auto=compress&cs=tinysrgb&w=800&dpr=1', title:'Surveying & Mapping'},
-                {src:'https://images.pexels.com/photos/442587/pexels-photo-442587.jpeg?auto=compress&cs=tinysrgb&w=800&dpr=1', title:'Aerial Delivery (light payload)'},
-                {src:'https://images.pexels.com/photos/104826/pexels-photo-104826.jpeg?auto=compress&cs=tinysrgb&w=800&dpr=1', title:'Educational STEM Kit'},
-                {src:'https://images.pexels.com/photos/193253/pexels-photo-193253.jpeg?auto=compress&cs=tinysrgb&w=800&dpr=1', title:'Photo & Video Capture'},
-                {src:'https://images.pexels.com/photos/442589/pexels-photo-442589.jpeg?auto=compress&cs=tinysrgb&w=800&dpr=1', title:'Agriculture & Land Analysis'},
-                {src:'https://images.pexels.com/photos/442590/pexels-photo-442590.jpeg?auto=compress&cs=tinysrgb&w=800&dpr=1', title:'Infrastructure Inspection'},
+                { src: 'https://images.pexels.com/photos/997131/pexels-photo-997131.jpeg', title: 'Surveying & Mapping' },
+                { src: 'https://images.pexels.com/photos/442587/pexels-photo-442587.jpeg?auto=compress&cs=tinysrgb&w=800&dpr=1', title: 'Aerial Delivery (light payload)' },
+                { src: 'https://images.pexels.com/photos/744366/pexels-photo-744366.jpeg', title: 'Educational STEM Kit' },
+                { src: 'https://images.pexels.com/photos/1123972/pexels-photo-1123972.jpeg', title: 'Photo & Video Capture' },
+                { src: 'https://images.pexels.com/photos/442589/pexels-photo-442589.jpeg?auto=compress&cs=tinysrgb&w=800&dpr=1', title: 'Agriculture & Land Analysis' },
+                { src: 'https://images.pexels.com/photos/1334517/pexels-photo-1334517.jpeg', title: 'Infrastructure Inspection' },
               ].map((g, idx) => (
                 <figure key={idx} className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm">
                   <img
@@ -382,7 +382,7 @@ export default function Landing() {
               <div>
                 <div className="aspect-[16/10] w-full overflow-hidden rounded-xl shadow-soft ring-1 ring-gray-200 bg-white">
                   <img
-                    src="https://images.pexels.com/photos/977896/pexels-photo-977896.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1"
+                    src="https://www.pexels.com/photo/2-quadcopter-under-blue-sky-and-white-clouds-207586/"
                     alt="Drone close-up in flight"
                     className="h-full w-full object-cover"
                     onError={handleImgError}
