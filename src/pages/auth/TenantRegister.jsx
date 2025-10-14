@@ -150,9 +150,12 @@ const TenantRegister = () => {
       {/* Left side with dashboard image */}
       <div className="w-[800px] bg-[rgba(113,82,243,0.05)] shadow-sm rounded-[30px] m-[30px] my-[60px] flex items-center justify-end">
         <img
-          src="/dashboard-image.png"
-          alt="Factory Management System Dashboard"
+          src="https://images.pexels.com/photos/3471463/pexels-photo-3471463.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1"
+          alt="Skylens drone in flight"
           className="w-[685px] h-[600px] object-cover rounded-l-[30px] border-r border-grey"
+          loading="lazy"
+          decoding="async"
+          onError={(e)=>{ e.currentTarget.src='https://images.pexels.com/photos/116145/pexels-photo-116145.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1'; }}
         />
       </div>
 

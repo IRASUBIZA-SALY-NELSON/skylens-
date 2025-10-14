@@ -224,9 +224,12 @@ const Login = () => {
       <div className="lg:flex-col h-auto hidden [@media(min-width:1280px)]:block lg:h-screen w-full lg:w-auto">
         <div className="w-full lg:w-[800px] h-[300px] sm:h-[400px] lg:h-[750px] bg-[rgba(113,82,243,0.05)] rounded-none lg:rounded-[30px] m-0 lg:m-[30px] lg:mb-[20px] lg:my-[60px] flex items-center justify-center lg:justify-end">
           <img
-            src="/dashboard-image.png"
-            alt="Factory Management System Dashboard"
+            src="https://images.pexels.com/photos/3471463/pexels-photo-3471463.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1"
+            alt="Skylens drone in flight"
             className="w-full h-full lg:w-[685px] lg:h-[600px] object-cover lg:rounded-l-[30px] border-r border-grey"
+            loading="lazy"
+            decoding="async"
+            onError={(e) => { e.currentTarget.src = 'https://images.pexels.com/photos/116145/pexels-photo-116145.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1'; }}
           />
         </div>
         <div className="hidden lg:block">
@@ -235,7 +238,7 @@ const Login = () => {
           </p>
         </div>
       </div>
-      
+
       {/* Right Side - Login Form */}
       <div className="w-full lg:w-[40%] flex items-center justify-center p-6 lg:p-4">
         <div className="w-full">

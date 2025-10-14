@@ -90,6 +90,14 @@ const smoothScrollToSection = (e, sectionId) => {
   }
 };
 
+// Fallback image handler used by gallery and section images
+const FALLBACK_DRONE = 'https://cdn.pixabay.com/photo/2017/01/23/09/41/drone-2003626_1280.png';
+const handleImgError = (e) => {
+  if (e?.currentTarget && e.currentTarget.src !== FALLBACK_DRONE) {
+    e.currentTarget.src = FALLBACK_DRONE;
+  }
+};
+
 export default function Landing() {
   const [openModal, setOpenModal] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -115,7 +123,7 @@ export default function Landing() {
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center">
               <div className="flex-shrink-0 flex items-center gap-3">
-                <img src="https://images.unsplash.com/photo-1508612761958-e931fab3ec6a?q=80&w=240&auto=format&fit=crop" alt="Skylens drone logo" className="h-10 w-10 md:h-12 md:w-12 rounded" />
+                <img src="https://images.pexels.com/photos/3471463/pexels-photo-3471463.jpeg?auto=compress&cs=tinysrgb&w=240&h=240&dpr=1" alt="Skylens drone logo" className="h-10 w-10 md:h-12 md:w-12 rounded object-cover" onError={handleImgError} decoding="async" loading="lazy" />
                 <span className="font-semibold text-gray-900 text-xl md:text-2xl tracking-tight">SKYLENS RWANDA</span>
               </div>
             </div>
@@ -244,14 +252,23 @@ export default function Landing() {
                   >
                     Explore Features <ArrowRight className='w-4 h-4 sm:w-5 sm:h-5' />
                   </a>
+                  <a
+                    href="#gallery"
+                    onClick={(e) => smoothScrollToSection(e, 'gallery')}
+                    className="inline-flex items-center justify-center gap-3 rounded-[15px] ring-1 ring-[#7152F3]/30 text-[#7152F3] px-6 py-4 text-sm sm:text-base font-semibold bg-white hover:bg-[#7152F3]/5 transition-all duration-300"
+                  >
+                    View Gallery
+                  </a>
                 </motion.div>
               </motion.div>
               <ScrollAnimation variant="scaleIn" className="w-full md:w-1/2 mt-10 md:mt-0">
                 <div className="aspect-[4/3] w-full overflow-hidden rounded-xl shadow-soft ring-1 shadow-[rgba(113,82,243,0.05)] ring-gray-200 bg-white">
                   <img
-                    src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?q=80&w=1200&auto=format&fit=crop"
-                    alt="Drone flying over fields"
+                    src="https://images.pexels.com/photos/442587/pexels-photo-442587.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1"
+                    alt="Skylens multitask drone in flight over fields"
                     className="h-full w-full object-cover hover:scale-105 transition-transform duration-500"
+                    onError={handleImgError}
+                    decoding="async"
                   />
                 </div>
               </ScrollAnimation>
@@ -275,9 +292,11 @@ export default function Landing() {
               <div>
                 <div className="aspect-[16/10] w-full overflow-hidden rounded-xl shadow-soft ring-1 ring-gray-200 bg-white">
                   <img
-                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop"
-                    alt="Drone inspecting landscape"
+                    src="https://images.pexels.com/photos/3691232/pexels-photo-3691232.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1"
+                    alt="Surveying drone inspecting landscape"
                     className="h-full w-full object-cover"
+                    onError={handleImgError}
+                    decoding="async" loading="lazy"
                   />
                 </div>
               </div>
@@ -292,7 +311,6 @@ export default function Landing() {
               <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 tracking-tight">Main Functions</h2>
               <p className="text-lg text-gray-600 mt-2">Core use‑cases delivered by our drone platform</p>
             </div>
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="rounded-xl border border-gray-200 bg-white p-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Aerial Photography & Videography</h3>
@@ -310,6 +328,38 @@ export default function Landing() {
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Educational Application</h3>
                 <p className="text-gray-600">Demonstrates robotics, programming, electronics, and aerodynamics. Supports student learning in drone control and data collection.</p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Drones Gallery */}
+        <section id="gallery" className="py-12 md:py-20 bg-white">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto mb-10">
+              <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 tracking-tight">Skylens Drones Gallery</h2>
+              <p className="text-lg text-gray-600 mt-2">A look at the multipurpose platforms we build — surveying, delivery, STEM and media</p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {src:'https://images.pexels.com/photos/116145/pexels-photo-116145.jpeg?auto=compress&cs=tinysrgb&w=800&dpr=1', title:'Surveying & Mapping'},
+                {src:'https://images.pexels.com/photos/442587/pexels-photo-442587.jpeg?auto=compress&cs=tinysrgb&w=800&dpr=1', title:'Aerial Delivery (light payload)'},
+                {src:'https://images.pexels.com/photos/104826/pexels-photo-104826.jpeg?auto=compress&cs=tinysrgb&w=800&dpr=1', title:'Educational STEM Kit'},
+                {src:'https://images.pexels.com/photos/193253/pexels-photo-193253.jpeg?auto=compress&cs=tinysrgb&w=800&dpr=1', title:'Photo & Video Capture'},
+                {src:'https://images.pexels.com/photos/442589/pexels-photo-442589.jpeg?auto=compress&cs=tinysrgb&w=800&dpr=1', title:'Agriculture & Land Analysis'},
+                {src:'https://images.pexels.com/photos/442590/pexels-photo-442590.jpeg?auto=compress&cs=tinysrgb&w=800&dpr=1', title:'Infrastructure Inspection'},
+              ].map((g, idx) => (
+                <figure key={idx} className="rounded-xl overflow-hidden border border-gray-200 bg-white shadow-sm">
+                  <img
+                    src={g.src}
+                    alt={g.title}
+                    className="h-56 w-full object-cover"
+                    onError={handleImgError}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <figcaption className="px-4 py-3 text-center text-sm font-medium text-gray-800">{g.title}</figcaption>
+                </figure>
+              ))}
             </div>
           </div>
         </section>
@@ -332,9 +382,11 @@ export default function Landing() {
               <div>
                 <div className="aspect-[16/10] w-full overflow-hidden rounded-xl shadow-soft ring-1 ring-gray-200 bg-white">
                   <img
-                    src="https://images.unsplash.com/photo-1508873535684-277a3cbcc4e0?q=80&w=1200&auto=format&fit=crop"
-                    alt="Drone in flight"
+                    src="https://images.pexels.com/photos/977896/pexels-photo-977896.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1"
+                    alt="Drone close-up in flight"
                     className="h-full w-full object-cover"
+                    onError={handleImgError}
+                    decoding="async" loading="lazy"
                   />
                 </div>
               </div>
@@ -401,7 +453,7 @@ export default function Landing() {
               <p className="text-lg text-gray-600 mt-2">Working with schools, NGOs, and local innovators in Rwanda</p>
             </div>
             <div className="rounded-2xl border border-gray-200 bg-white p-6 max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-6">
-              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=480&auto=format&fit=crop" alt="Partners with drone" className="w-full md:w-1/3 rounded-xl object-cover" />
+              <img src="https://images.pexels.com/photos/977629/pexels-photo-977629.jpeg?auto=compress&cs=tinysrgb&w=800&dpr=1" alt="Drone operations partner" className="w-full md:w-1/3 rounded-xl object-cover" onError={handleImgError} decoding="async" loading="lazy" />
               <div className="md:w-2/3">
                 <h3 className="text-xl font-semibold text-gray-900">Local Tech Ecosystem</h3>
                 <p className="text-gray-600 mt-2">We collaborate with educational institutions and community initiatives to expand access to drone technology and training.</p>
@@ -442,7 +494,7 @@ export default function Landing() {
               </div>
               <div>
                 <div className="aspect-[16/10] w-full overflow-hidden rounded-xl shadow-soft ring-1 ring-gray-200 bg-white">
-                  <img src="https://images.unsplash.com/photo-1520975964184-9ca7d7b9a2f3?q=80&w=1200&auto=format&fit=crop" alt="About Skylens" className="h-full w-full object-cover" />
+                  <img src="https://images.pexels.com/photos/358092/pexels-photo-358092.jpeg?auto=compress&cs=tinysrgb&w=1200&dpr=1" alt="About Skylens drone assembly" className="h-full w-full object-cover" onError={handleImgError} decoding="async" loading="lazy" />
                 </div>
               </div>
             </div>
