@@ -382,7 +382,7 @@ export default function Landing() {
               <div>
                 <div className="aspect-[16/10] w-full overflow-hidden rounded-xl shadow-soft ring-1 ring-gray-200 bg-white">
                   <img
-                    src="https://www.pexels.com/photo/2-quadcopter-under-blue-sky-and-white-clouds-207586/"
+                    src="https://images.pexels.com/photos/319968/pexels-photo-319968.jpeg"
                     alt="Drone close-up in flight"
                     className="h-full w-full object-cover"
                     onError={handleImgError}
@@ -453,7 +453,7 @@ export default function Landing() {
               <p className="text-lg text-gray-600 mt-2">Working with schools, NGOs, and local innovators in Rwanda</p>
             </div>
             <div className="rounded-2xl border border-gray-200 bg-white p-6 max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-6">
-              <img src="https://images.pexels.com/photos/977629/pexels-photo-977629.jpeg?auto=compress&cs=tinysrgb&w=800&dpr=1" alt="Drone operations partner" className="w-full md:w-1/3 rounded-xl object-cover" onError={handleImgError} decoding="async" loading="lazy" />
+              <img src="https://images.pexels.com/photos/2100075/pexels-photo-2100075.jpeg" alt="Drone operations partner" className="w-full md:w-1/3 rounded-xl object-cover" onError={handleImgError} decoding="async" loading="lazy" />
               <div className="md:w-2/3">
                 <h3 className="text-xl font-semibold text-gray-900">Local Tech Ecosystem</h3>
                 <p className="text-gray-600 mt-2">We collaborate with educational institutions and community initiatives to expand access to drone technology and training.</p>
